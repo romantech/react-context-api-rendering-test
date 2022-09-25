@@ -20,7 +20,7 @@ const nameContextReducer = (state, action) => {
     case SET_FIRST_NAME:
       return { ...state, firstName: action.payload };
     default:
-      return state;
+      throw new Error(`Unhandled action type: ${action.type}`);
   }
 };
 
