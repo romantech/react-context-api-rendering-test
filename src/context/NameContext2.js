@@ -7,17 +7,17 @@ const FamilyNameDispatchContext = createContext(null);
 const FirstNameStateContext = createContext(null);
 const FirstNameDispatchContext = createContext(null);
 
-const useFamilyNameContext = () => [
+const useFamilyNameCtx = () => [
   factoryUseContext(FamilyNameStateContext)(),
   factoryUseContext(FamilyNameDispatchContext)()
 ];
 
-const useFirstNameContext = () => [
+const useFirstNameCtx = () => [
   factoryUseContext(FirstNameStateContext)(),
   factoryUseContext(FirstNameDispatchContext)()
 ];
 
-const NameContextProvider = ({ children }) => {
+const Provider = ({ children }) => {
   const [familyName, setFamilyName] = useState('');
   const [firstName, setFirstName] = useState('');
 
@@ -34,4 +34,4 @@ const NameContextProvider = ({ children }) => {
   );
 };
 
-export { useFamilyNameContext, useFirstNameContext, NameContextProvider };
+export { useFamilyNameCtx, useFirstNameCtx, Provider };

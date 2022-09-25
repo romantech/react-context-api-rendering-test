@@ -23,19 +23,19 @@ const nameContextReducer = (state, action) => {
   }
 };
 
-const useFamilyNameContext = () => [
+const useFamilyNameCtx = () => [
   factoryUseContext(FamilyNameStateContext)(),
   factoryUseContext(FamilyNameDispatchContext)()
 ];
 
-const useFirstNameContext = () => [
+const useFirstNameCtx = () => [
   factoryUseContext(FirstNameStateContext)(),
   factoryUseContext(FirstNameDispatchContext)()
 ];
 
 const initialState = { familyName: '', firstName: '' };
 
-const NameContextProvider = ({ children }) => {
+const Provider = ({ children }) => {
   const [{ familyName, firstName }, dispatch] = useReducer(
     nameContextReducer,
     initialState
@@ -58,4 +58,4 @@ const NameContextProvider = ({ children }) => {
   );
 };
 
-export { useFamilyNameContext, useFirstNameContext, NameContextProvider };
+export { useFamilyNameCtx, useFirstNameCtx, Provider };
