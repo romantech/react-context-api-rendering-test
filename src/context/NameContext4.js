@@ -7,11 +7,16 @@ const FamilyNameDispatchContext = createContext(null);
 const FirstNameStateContext = createContext(null);
 const FirstNameDispatchContext = createContext(null);
 
+const SET_FAMILY_NAME = 'SET_FAMILY_NAME';
+const SET_FIRST_NAME = 'SET_FIRST_NAME';
+const familyNameAction = (payload) => ({ type: SET_FAMILY_NAME, payload });
+const firstNameAction = (payload) => ({ type: SET_FIRST_NAME, payload });
+
 const nameContextReducer = (state, action) => {
   switch (action.type) {
-    case 'setFamilyName':
+    case SET_FAMILY_NAME:
       return { ...state, familyName: action.payload };
-    case 'setFirstName':
+    case SET_FIRST_NAME:
       return { ...state, firstName: action.payload };
     default:
       return state;
@@ -37,15 +42,8 @@ const NameContextProvider = ({ children }) => {
   );
 
   // 1개 reducer를 사용할 때 useCallback으로 dispatch를 감싸줘야 리렌더링을 방지할 수 있다
-  const setFamilyName = useCallback(
-    (payload) => dispatch({ type: 'setFamilyName', payload }),
-    []
-  );
-
-  const setFirstName = useCallback(
-    (payload) => dispatch({ type: 'setFirstName', payload }),
-    []
-  );
+  const setFamilyName = useCallback((v) => dispatch(familyNameAction(v)), []);
+  const setFirstName = useCallback((v) => dispatch(firstNameAction(v)), []);
 
   return (
     <FamilyNameStateContext.Provider value={familyName}>
