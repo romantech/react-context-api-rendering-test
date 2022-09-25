@@ -1,4 +1,4 @@
-# React Context API 렌더링 최적화 과정 기록
+# React Context API 렌더링 최적화 스터디
 
 ![2022-09-25 22 11 32](https://user-images.githubusercontent.com/8604840/192145269-5fda479d-41bf-43e0-9156-96cca7e22307.gif)
 
