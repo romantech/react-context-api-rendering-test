@@ -1,6 +1,6 @@
 import { useContext } from 'react';
 
-// 컨텍스트 내부에서만 사용하도록 강제
+// 컨텍스트 Provider 내부에서 사용하지 않으면 에러를 발생시키는 factory 함수
 export const factoryUseContext = (context, name = '') => () => {
   const ctx = useContext(context);
 

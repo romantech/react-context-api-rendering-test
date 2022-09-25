@@ -1,7 +1,7 @@
 import React, { createContext, useReducer, useCallback } from 'react';
 import { factoryUseContext } from './factoryUseContext';
 
-// useReducer를 사용한 컨텍스트
+// useReducer 사용, state/dispatch 컨텍스트 분리해서 리렌더링 방지
 const FamilyNameStateContext = createContext(null);
 const FamilyNameDispatchContext = createContext(null);
 const FirstNameStateContext = createContext(null);
@@ -42,6 +42,7 @@ const Provider = ({ children }) => {
   );
 
   // 1개 reducer를 사용할 때 useCallback으로 dispatch를 감싸줘야 리렌더링을 방지할 수 있다
+  // State, Dispatch 컨텍스트를 분리하지 않으면 불필요한 리렌더링이 발생한다
   const setFamilyName = useCallback((v) => dispatch(familyNameAction(v)), []);
   const setFirstName = useCallback((v) => dispatch(firstNameAction(v)), []);
 
