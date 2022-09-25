@@ -5,10 +5,10 @@ import { factoryUseContext } from './factoryUseContext';
 const FamilyNameContext = createContext(null);
 const FirstNameContext = createContext(null);
 
-const useFamilyNameContext = factoryUseContext(FamilyNameContext);
-const useFirstNameContext = factoryUseContext(FirstNameContext);
+const useFamilyNameCtx = factoryUseContext(FamilyNameContext);
+const useFirstNameCtx = factoryUseContext(FirstNameContext);
 
-const NameContextProvider = ({ children }) => {
+const Provider = ({ children }) => {
   const [familyName, setFamilyName] = useState('');
   const [firstName, setFirstName] = useState('');
 
@@ -26,4 +26,4 @@ const NameContextProvider = ({ children }) => {
   );
 };
 
-export { useFamilyNameContext, useFirstNameContext, NameContextProvider };
+export { useFamilyNameCtx, useFirstNameCtx, Provider };

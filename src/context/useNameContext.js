@@ -1,5 +1,5 @@
 import { NameContext1, NameContext2, NameContext3, NameContext4 } from './';
-import { Dummy, FamilyName, FirstName } from '../components';
+import { Dummy, NameInput } from '../components';
 import { useCallback } from 'react';
 
 const contextMap = {
@@ -30,11 +30,11 @@ export const useNameContext = (selected) => {
   const { Context } = contextMap[selected];
   return useCallback(
     () => (
-      <Context.NameContextProvider>
-        <FamilyName useContext={Context.useFamilyNameContext} />
-        <FirstName useContext={Context.useFirstNameContext} />
+      <Context.Provider>
+        <NameInput useContext={Context.useFamilyNameCtx} name="FamilyName" />
+        <NameInput useContext={Context.useFirstNameCtx} name="FirstName" />
         <Dummy />
-      </Context.NameContextProvider>
+      </Context.Provider>
     ),
     [Context]
   );
