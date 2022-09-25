@@ -4,14 +4,17 @@ import style from './style.css';
 import { SelectBox } from './components';
 import { options, useNameContext } from './context';
 
+const [ firstCtx ] = options;
+
 function App() {
-  const [selectedCtx, setSelectedCtx] = useState(options[1].value);
+  const [selectedCtx, setSelectedCtx] = useState(firstCtx.value);
   const onChange = useCallback((value) => setSelectedCtx(value), []);
   const NameContextProvider = useNameContext(selectedCtx);
 
   return (
     <>
-      <h1>Context API Rendering Test</h1>
+      <h1 className="title">Context API Rendering Test</h1>
+      
       <div className="mb-7">
         <span className="span-label">Selected Context</span>
         <SelectBox
@@ -20,6 +23,7 @@ function App() {
           deaultValue={selectedCtx}
         />
       </div>
+      
       <NameContextProvider />
     </>
   );
