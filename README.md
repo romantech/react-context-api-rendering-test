@@ -1,4 +1,7 @@
-# React Context API 렌더링 최적화
+# React Context API 렌더링 최적화 과정 기록
+
+![2022-09-25 22 11 32](https://user-images.githubusercontent.com/8604840/192145269-5fda479d-41bf-43e0-9156-96cca7e22307.gif)
+
 
 ### TL;DR
 
@@ -13,5 +16,5 @@
 - 이외에도 `React.memo`를 사용해서 컨텍스트 값을 prop으로 받는 컴포넌트를 만들거나, [use-context-selector](https://github.com/dai-shi/use-context-selector) 같은 라이브러리 등을 사용해서 불필요한 리렌더링을 방지할 수 있다
 
 ### 관련 링크
-- [노션 노트](https://www.notion.so/colorfilter/TIL-React-Context-API-ee62683c29fb40699efe424f13a6028e)
+- [노션에서 전체 글 보기](https://www.notion.so/colorfilter/TIL-React-Context-API-ee62683c29fb40699efe424f13a6028e)
 - [CodeSandbox](https://codesandbox.io/s/react-context-api-rendering-test-xhg6fp)
