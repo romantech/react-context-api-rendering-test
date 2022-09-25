@@ -6,7 +6,7 @@ export default function Dummy() {
   count.current += 1;
 
   return (
-    <div className="span-label">
+    <div style={{width: 200, padding: '6px 0'}} >
       <span>Dummy Rendered</span>
       <strong className="counter">{`${count.current}`}</strong>
     </div>

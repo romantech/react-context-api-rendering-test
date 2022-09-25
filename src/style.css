@@ -4,7 +4,7 @@ select {
   padding: 0 5px;
 }
 
-input[type='text'] {
+input[type="text"] {
   width: 250px;
   height: 34px;
   padding: 0 8px;
@@ -22,4 +22,10 @@ input[type='text'] {
 .counter {
   padding: 0 5px;
   color: Teal;
+}
+
+.title {
+  background: OldLace;
+  padding: 6px;
+  border-bottom: 2px solid NavajoWhite;
 }
