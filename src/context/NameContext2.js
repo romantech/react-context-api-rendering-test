@@ -1,4 +1,4 @@
-import React, { useState, createContext } from 'react';
+import { createContext, useState } from 'react';
 import { factoryUseContext } from './factoryUseContext';
 
 // state, dispatch 컨텍스트를 분리해서 리렌더링을 방지하는 방법
@@ -9,12 +9,12 @@ const FirstNameDispatchContext = createContext(null);
 
 const useFamilyNameCtx = () => [
   factoryUseContext(FamilyNameStateContext)(),
-  factoryUseContext(FamilyNameDispatchContext)()
+  factoryUseContext(FamilyNameDispatchContext)(),
 ];
 
 const useFirstNameCtx = () => [
   factoryUseContext(FirstNameStateContext)(),
-  factoryUseContext(FirstNameDispatchContext)()
+  factoryUseContext(FirstNameDispatchContext)(),
 ];
 
 const Provider = ({ children }) => {

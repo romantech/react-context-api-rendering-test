@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import { useRef } from 'react';
 
 export default function Dummy() {
   // Provider 안에 있지만 컨텍스트 값을 구독하지 않아서 리렌더링되지 않음

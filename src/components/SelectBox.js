@@ -1,7 +1,7 @@
-export default function SelectBox({ onChange, options, deaultValue }) {
+export default function SelectBox({ onChange, options, defaultValue }) {
   return (
     <select
-      defaultValue={deaultValue}
+      defaultValue={defaultValue}
       onChange={({ target }) => onChange(target.value)}
       className="mb-10"
     >
