@@ -1,8 +1,8 @@
-import React, { useCallback, useState } from 'react';
+import { useCallback, useState } from 'react';
 import ReactDOM from 'react-dom/client';
+import './style.css';
 import { SelectBox } from './components';
 import { options, useNameContext } from './context';
-// eslint-disable-next-line
 
 const [, secondOption] = options;
 
