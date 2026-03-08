@@ -1,9 +1,8 @@
-import React, { useState, useCallback } from 'react';
+import React, { useCallback, useState } from 'react';
 import ReactDOM from 'react-dom/client';
-// eslint-disable-next-line
-import style from './style.css';
 import { SelectBox } from './components';
 import { options, useNameContext } from './context';
+// eslint-disable-next-line
 
 const [, secondOption] = options;
 
@@ -17,13 +16,9 @@ function App() {
       <h1 className="title">Context API Rendering Test</h1>
       <div className="mb-7">
         <span className="span-label">Selected Context</span>
-        <SelectBox
-          options={options}
-          onChange={onChange}
-          deaultValue={selectedCtx}
-        />
+        <SelectBox options={options} onChange={onChange} defaultValue={selectedCtx} />
       </div>
-      
+
       <NameContextProvider />
     </>
   );

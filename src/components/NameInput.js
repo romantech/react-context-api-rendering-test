@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import { useRef } from 'react';
 
 const NameInput = ({ useContext, name }) => {
   const [state, setState] = useContext();

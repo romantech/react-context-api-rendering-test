@@ -1,4 +1,4 @@
-import React, { useState, createContext, useMemo } from 'react';
+import { createContext, useMemo, useState } from 'react';
 import { factoryUseContext } from './factoryUseContext';
 
 // useMemo를 사용해서 리렌더링을 방지하는 방법
@@ -12,16 +12,12 @@ const Provider = ({ children }) => {
   const [familyName, setFamilyName] = useState('');
   const [firstName, setFirstName] = useState('');
 
-  const familyNameValue = useMemo(() => [familyName, setFamilyName], [
-    familyName
-  ]);
+  const familyNameValue = useMemo(() => [familyName, setFamilyName], [familyName]);
   const firstNameValue = useMemo(() => [firstName, setFirstName], [firstName]);
 
   return (
     <FamilyNameContext.Provider value={familyNameValue}>
-      <FirstNameContext.Provider value={firstNameValue}>
-        {children}
-      </FirstNameContext.Provider>
+      <FirstNameContext.Provider value={firstNameValue}>{children}</FirstNameContext.Provider>
     </FamilyNameContext.Provider>
   );
 };

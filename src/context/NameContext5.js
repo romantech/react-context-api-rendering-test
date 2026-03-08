@@ -1,4 +1,4 @@
-import React, { createContext, useReducer, useMemo } from 'react';
+import { createContext, useMemo, useReducer } from 'react';
 import { factoryUseContext } from './factoryUseContext';
 
 // useReducer 사용, state 컨텍스트만 만들고 useMemo로 리렌더링 방지
@@ -27,25 +27,20 @@ const nameContextReducer = (state, action) => {
 const initialState = { familyName: '', firstName: '' };
 
 const Provider = ({ children }) => {
-  const [{ familyName, firstName }, dispatch] = useReducer(
-    nameContextReducer,
-    initialState
-  );
+  const [{ familyName, firstName }, dispatch] = useReducer(nameContextReducer, initialState);
 
   const familyNameValue = useMemo(
     () => [familyName, (v) => dispatch(familyNameAction(v))],
-    [familyName]
+    [familyName],
   );
   const firstNameValue = useMemo(
     () => [firstName, (v) => dispatch(firstNameAction(v))],
-    [firstName]
+    [firstName],
   );
 
   return (
     <FamilyNameContext.Provider value={familyNameValue}>
-      <FirstNameContext.Provider value={firstNameValue}>
-        {children}
-      </FirstNameContext.Provider>
+      <FirstNameContext.Provider value={firstNameValue}>{children}</FirstNameContext.Provider>
     </FamilyNameContext.Provider>
   );
 };

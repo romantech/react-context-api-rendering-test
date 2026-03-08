@@ -1,4 +1,4 @@
-import React, { useState, createContext } from 'react';
+import { createContext, useState } from 'react';
 import { factoryUseContext } from './factoryUseContext';
 
 // 일반적인 컨텍스트 사용. firstName, familyName 컨텍스트를 분리했지만
