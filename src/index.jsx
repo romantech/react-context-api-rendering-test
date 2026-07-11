@@ -16,7 +16,11 @@ function App() {
       <h1 className="title">Context API Rendering Test</h1>
       <div className="mb-7">
         <span className="span-label">Selected Context</span>
-        <SelectBox options={options} onChange={onChange} defaultValue={selectedCtx} />
+        <SelectBox
+          options={options}
+          onChange={onChange}
+          defaultValue={selectedCtx}
+        />
       </div>
 
       <NameContextProvider />
