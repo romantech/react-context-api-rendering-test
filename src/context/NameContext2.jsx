@@ -34,4 +34,4 @@ const Provider = ({ children }) => {
   );
 };
 
-export { useFamilyNameCtx, useFirstNameCtx, Provider };
+export { Provider, useFamilyNameCtx, useFirstNameCtx };

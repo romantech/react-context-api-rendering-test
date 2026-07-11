@@ -12,14 +12,19 @@ const Provider = ({ children }) => {
   const [familyName, setFamilyName] = useState('');
   const [firstName, setFirstName] = useState('');
 
-  const familyNameValue = useMemo(() => [familyName, setFamilyName], [familyName]);
+  const familyNameValue = useMemo(
+    () => [familyName, setFamilyName],
+    [familyName],
+  );
   const firstNameValue = useMemo(() => [firstName, setFirstName], [firstName]);
 
   return (
     <FamilyNameContext.Provider value={familyNameValue}>
-      <FirstNameContext.Provider value={firstNameValue}>{children}</FirstNameContext.Provider>
+      <FirstNameContext.Provider value={firstNameValue}>
+        {children}
+      </FirstNameContext.Provider>
     </FamilyNameContext.Provider>
   );
 };
 
-export { useFamilyNameCtx, useFirstNameCtx, Provider };
+export { Provider, useFamilyNameCtx, useFirstNameCtx };

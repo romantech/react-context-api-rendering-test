@@ -27,7 +27,10 @@ const nameContextReducer = (state, action) => {
 const initialState = { familyName: '', firstName: '' };
 
 const Provider = ({ children }) => {
-  const [{ familyName, firstName }, dispatch] = useReducer(nameContextReducer, initialState);
+  const [{ familyName, firstName }, dispatch] = useReducer(
+    nameContextReducer,
+    initialState,
+  );
 
   const familyNameValue = useMemo(
     () => [familyName, (v) => dispatch(familyNameAction(v))],
@@ -40,9 +43,11 @@ const Provider = ({ children }) => {
 
   return (
     <FamilyNameContext.Provider value={familyNameValue}>
-      <FirstNameContext.Provider value={firstNameValue}>{children}</FirstNameContext.Provider>
+      <FirstNameContext.Provider value={firstNameValue}>
+        {children}
+      </FirstNameContext.Provider>
     </FamilyNameContext.Provider>
   );
 };
 
-export { useFamilyNameCtx, useFirstNameCtx, Provider };
+export { Provider, useFamilyNameCtx, useFirstNameCtx };
