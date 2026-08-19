@@ -5,8 +5,8 @@
   "keywords": [],
   "main": "src/index.jsx",
   "dependencies": {
-    "react": "19.2.3",
-    "react-dom": "19.2.3"
+    "react": "19.2.8",
+    "react-dom": "19.2.8"
   },
   "scripts": {
     "dev": "vite",
@@ -26,7 +26,7 @@
   ],
   "devDependencies": {
     "@biomejs/biome": "^2.5.9",
-    "@vitejs/plugin-react": "^5.2.0",
+    "@vitejs/plugin-react": "^6.0.5",
     "vite": "^8.2.1"
   }
 }
